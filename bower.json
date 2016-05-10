@@ -1,0 +1,21 @@
+{
+  "name": "ductia-react",
+  "description": "a re-implementation of Ductia with the React library",
+  "main": "server.js",
+  "authors": [
+    "Simon J. Painter"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/madSimonJ/Ductia-React",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.0.2"
+  }
+}
