@@ -1,18 +1,20 @@
-var uuid = require('node-uuid');
+var uuid = require('node-uuid')
 
-var listeners = {};
+var listeners = {}
 
 module.exports = {
-  register: function(callback) {
-    var id = uuid.v4();
-    listeners[id] = callback;
-    return id;
+  register: function (callback) {
+    console.log('registering')
+    var id = uuid.v4()
+    listeners[id] = callback
+    return id
   },
-  dispatch: function(payload) {
-    console.info('dispatching...' + payload);
-    for(var id in listeners) {
-      var listener = listeners[id];
-      listener(payload);
+  dispatch: function (payload) {
+    console.info('dispatching...' + JSON.stringify(payload))
+    console.log('listeners =' + listeners)
+    for (var id in listeners) {
+      var listener = listeners[id]
+      listener(payload)
     }
   }
 }
