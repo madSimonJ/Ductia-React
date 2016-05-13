@@ -7,29 +7,14 @@ var Route = reactRouter.Route
 var Link = reactRouter.Link
 
 var BookListItem = require('./bookListItem')
-var bookRepository = require('./bookRepository')
 var bookActionCreator = require('./bookActionCreator')
+var store = require('./../../store')
 
 module.exports = React.createClass({
-    getInitialState: function() {
-      return {
-        books: []
-      }
-    },
     componentDidMount: function() {
-      console.log('component did mount')
-      let thisComponent = this;
-      bookRepository.GetAllBooks()
-        .then(function (bookData) {
-          console.log('setState bookData = ' + JSON.stringify(bookData))
-          // bookActionCreator.getAll(bookData)
-          thisComponent.setState({
-            books: bookData
-          }).bind(thisComponent)
-        })
+      this.props.getAll()
     },
     render: function() {
-      console.log('render book list')
         return (
             <div className="container">
               <table>
@@ -42,7 +27,7 @@ module.exports = React.createClass({
                   </tr>
                 </thead>
                 <tbody>
-                  {_.map(this.state.books, function(book, index) {
+                  {_.map(this.props.BookList, function(book, index) {
                     return (
                       <BookListItem book={book} />
                     )

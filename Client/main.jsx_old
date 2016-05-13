@@ -1,0 +1,40 @@
+var React = require('react')
+var ReactDOM = require('react-dom')
+var reactRouter = require('react-router')
+var Router = reactRouter.Router
+var Route = reactRouter.Route
+var compose = require('redux').compose
+var reactRedux = require('react-redux')
+var ReduxRouter = require('redux-router').ReduxRouter
+var reduxReactRouter =  require('redux-router').reduxReactRouter
+var Provider = reactRedux.Provider
+var IndexRoute = reactRouter.IndexRoute
+var browserHistory = reactRouter.browserHistory
+var Link = reactRouter.Link
+var createHistory = require('history').createHistory
+var Redux = require('redux')
+
+var AppRoot = require('./Components/AppRoot')
+var Index = require('./Components/Index/IndexComponent')
+var BookList = require('./Components/Books/bookList')
+
+var store = require('./store')
+
+class Root extends React.Component {
+  render () {
+    return (
+      <div>
+        <Provider store={store}>
+          <ReduxRouter>
+            <Route path="/" component={ AppRoot }>
+               <IndexRoute component={Index} />
+               <Route path="/books" component={BookList}/>
+            </Route>
+          </ReduxRouter>
+        </Provider>
+      </div>
+    )
+  }
+}
+
+ ReactDOM.render(<Root />, document.getElementById('app'))

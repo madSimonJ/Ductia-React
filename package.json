@@ -22,9 +22,11 @@
     "browserify": "^13.0.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "fetch": "^1.0.1",
     "gulp": "^3.9.1",
     "gulp-live-server": "0.0.29",
-    "jquery": "^2.2.3",
+    "history": "^2.1.1",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.12.0",
     "mongodb": "^2.1.18",
     "morgan": "^1.7.0",
@@ -32,13 +34,21 @@
     "q": "^1.4.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
+    "react-router-redux": "^4.0.4",
     "reactify": "^1.1.1",
+    "redux": "^3.5.2",
+    "redux-router": "^1.0.0-beta8",
+    "redux-thunk": "^2.1.0",
     "resourceful": "^0.3.5",
     "restful": "^0.4.5",
     "stylus": "^0.54.5",
     "toastr": "^2.1.2",
     "vinyl-source-stream": "^1.1.0",
     "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.3.1"
   }
 }

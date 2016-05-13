@@ -14,6 +14,7 @@ module.exports = {
     console.log('listeners =' + listeners)
     for (var id in listeners) {
       var listener = listeners[id]
+      console.log('listener = ' + listener)
       listener(payload)
     }
   }

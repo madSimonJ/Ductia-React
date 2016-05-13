@@ -11,7 +11,7 @@ function BookStore () {
 
   function triggerListeners() {
       changeListeners.forEach(function(listener) {
-          listener(items)
+          listener(bookData)
       });
   }
 
@@ -27,14 +27,11 @@ function BookStore () {
       if (split[0] === 'book-list') {
           switch (split[1]) {
               case "getall":
-                  addGroceryItem(event.payload);
+                  getAllBooks(event.payload);
                   break;
           }
       }
   })
-
 }
-
-
 
 module.exports = new BookStore();
