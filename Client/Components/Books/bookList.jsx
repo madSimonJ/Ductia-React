@@ -1,6 +1,6 @@
 var _ = require('lodash')
-
 var React = require('react')
+
 var reactRouter = require('react-router')
 var Router = reactRouter.Router
 var Route = reactRouter.Route
@@ -8,7 +8,6 @@ var Link = reactRouter.Link
 
 var BookListItem = require('./bookListItem')
 var bookActionCreator = require('./bookActionCreator')
-var store = require('./../../store')
 
 module.exports = React.createClass({
     componentDidMount: function() {
