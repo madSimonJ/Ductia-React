@@ -26,7 +26,7 @@ describe('the BookListItem Component', function () {
     }
 
     describe('when rendering', function () {
-      let shallowRendererOutput = ''
+      let shallowRendererOutput = {}
 
       before(function () {
         shallowRenderer.render(<BookListItem book={validBookDataItem}/>)
@@ -44,22 +44,22 @@ describe('the BookListItem Component', function () {
         allChildElementsAreTableElements.should.be.true
       })
 
-      it('should set the first table element\'s content to the book\'s title', function() {
+      it('should set the first table element\'s content to the book\'s title', function () {
         var firstTableElement = shallowRendererOutput.props.children[0]
         firstTableElement.props.children.should.equal(validBookDataItem.title)
       })
 
-      it('should set the second table element\'s content to the book\'s ISBN', function() {
+      it('should set the second table element\'s content to the book\'s ISBN', function () {
         var firstTableElement = shallowRendererOutput.props.children[1]
         firstTableElement.props.children.should.equal(validBookDataItem.isbn13)
       })
 
-      it('should set the third table element\'s content to the book\'s publisher', function() {
+      it('should set the third table element\'s content to the book\'s publisher', function () {
         var firstTableElement = shallowRendererOutput.props.children[2]
         firstTableElement.props.children.should.equal(validBookDataItem.publisher)
       })
 
-      it('should set the third table element\'s content to the book\'s publication date', function() {
+      it('should set the fourth table element\'s content to the book\'s publication date', function () {
         var firstTableElement = shallowRendererOutput.props.children[3]
         firstTableElement.props.children.should.equal(validBookDataItem.publicationDate)
       })
