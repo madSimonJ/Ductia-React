@@ -38,7 +38,7 @@ describe('the BookListItem Component', function () {
       })
 
       it('should create a table row with four elements', function () {
-        var allChildElementsAreTableElements = _.every(shallowRendererOutput.props.children, function(element) {
+        var allChildElementsAreTableElements = _.every(shallowRendererOutput.props.children, function (element) {
           return element.type === 'td'
         })
         allChildElementsAreTableElements.should.be.true
