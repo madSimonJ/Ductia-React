@@ -8,7 +8,7 @@ module.exports = function (app) {
   apiRoutes.ConfigureApiRoutes(app)
 
   // var bowerComponentsDirectory = path.join(serverRootDirectory, 'bower_components')
-  var reactBuildDirectory = path.join(serverRootDirectory, '.tmp')
+  var reactBuildDirectory = path.join(serverRootDirectory, 'output')
   var clientRootDirectory = path.join(serverRootDirectory, 'client')
 
   // app.get('/js/app.js', function (req, res) {
